@@ -2,8 +2,9 @@
 
 ## Some properties are cheaper to animate:
 
-- transform instead of offset (top, left, bottom, right)
-- scale instead of width and height
+Prefer using `translate` instead of offset (`top`, `left`, `bottom`, `right`)
+
+Prefer `scale` instead of `width` and `height`
 
 ## Hiding elements
 
