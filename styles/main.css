@@ -1,12 +1,76 @@
+.page  {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
 .card {
+    position: relative;
     background-color: white;
     border-radius: 4px;
     padding: 20px;
+    overflow: hidden;
 
-    transition: color 1.5s 1s, background-color 0.3s;
+    width: 400px;
+    height: 400px;
+
+    box-shadow: 0 0 20px rgba(0,0,0, 0.7);
+
+    background-image: url(../images/david-kovalenko-aQzh7VC-0H0-unsplash.jpg);
+    background-size: cover;
+
+    color: #f3f3f3;
+
+    transition: color 0.5s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.card:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    content: '';
+
+    transition: opacity 0.6s;
+}
+
+.card h1 {
+    transform: translateY(-60%);
+    opacity: 0;
+
+    transition: 0.3s;
 }
 
 .card:hover {
-    background-color: black;
-    color: #eee;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    transform: translateY(-3%);
 }
+
+.card:hover h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Target before on card hover */
+.card:hover::before {
+    opacity: 1;
+}
+
+
+
+
+
+
+/* Alternative way to develop */
+/* .card-lifted {
+    transform: translateY(-50px);
+    background-color: #ddd;
+    color: #eee;
+} */
